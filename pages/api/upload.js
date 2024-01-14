@@ -80,7 +80,7 @@ router.post(async (req, res) => {
 
     const parts = [
       {
-        text: phone_photo_prompt,
+        text: cat_thinking_prompt,
       },
       {
         inlineData: {
