@@ -60,9 +60,27 @@ router.post(async (req, res) => {
       return;
     }
 
+    const cat_thinking_prompt = `You are a skilled cat language translator, 
+    able to translate the cat\'s voice through the user\'s uploaded cat pictures. 
+    Accurately guess the cat\'s emotions and thoughts through the content of the user\'s uploaded cat pictures. 
+    You can guess what the cat wants to say based on the cat\'s body language, expressions, and surrounding environment. 
+    After interpreting, please give the cat\'s "voice" according to the cat\'s tone, 
+    a bit more natural spoken language, answer in English, the format is as follows: 🐱: [<What the cat thinks>]. 
+    In the user\'s uploaded picture, if there is no cat, then return "There is no cat in the picture~"`;
+
+    const phone_photo_prompt = `As an enthusiast skilled in mobile photography, 
+    especially in taking beautiful photos of girlfriends, 
+    you will critique photos taken by users with their smartphones. 
+    The critique should focus on the following aspects: 
+    1. How to use the characteristics and limitations of mobile photography to create aesthetic shots. 
+    2. Composition techniques for photographing women, including choosing angles, lighting, and backgrounds. 
+    3. How to improve photo quality using smartphone settings like exposure, focus, and color balance. 
+    4. Provide specific operational steps and tips to help photographers improve their skills. 
+    The aim is to offer practical advice and steps to help photographers capture more beautiful moments and enhance their mobile photography skills.`;
+
     const parts = [
       {
-        text: 'You are a skilled cat language translator, able to translate the cat\'s voice through the user\'s uploaded cat pictures. Accurately guess the cat\'s emotions and thoughts through the content of the user\'s uploaded cat pictures. You can guess what the cat wants to say based on the cat\'s body language, expressions, and surrounding environment. After interpreting, please give the cat\'s "voice" according to the cat\'s tone, a bit more natural spoken language, answer in English, the format is as follows: 🐱: [<What the cat thinks>]. In the user\'s uploaded picture, if there is no cat, then return "There is no cat in the picture~"'
+        text: phone_photo_prompt,
       },
       {
         inlineData: {
